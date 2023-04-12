@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Character } from '@app/shared/interfaces/character.interface';
 
 
-@Component({
+@Component({ 
     selector:'app-character',
     template:`
     <div class="card">
@@ -21,9 +21,11 @@ import { Character } from '@app/shared/interfaces/character.interface';
             <h2>{{ character.name | slice: 0:15}}</h2>
           </a>
           <h4 class="text-muted">{{ character.gender }}</h4>
-          <small class="text-muted">{{ character.created | date }}</small>
-        </div>
-      </div>
+          <small class="text-muted">Created: {{ character.created | date }}</small>
+          <br>
+          <small class="text-muted">Specie: {{  character.species}}</small>
+          <br>
+          <small class="text-muted">actual state: {{ character.status }}</small>
     </div>`,
     changeDetection:ChangeDetectionStrategy.OnPush
 })
